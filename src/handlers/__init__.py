@@ -1,3 +1,5 @@
-from .start_hd import start_router
+from .commands_hd import commands_router
+from .kb_hd import kb_hd_router
 
-routers = [start_router]
+routers = [commands_router,
+           kb_hd_router]

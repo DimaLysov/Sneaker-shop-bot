@@ -9,6 +9,7 @@ async def main():
     # await async_main()
     for router in routers:
         dp.include_router(router)
+    print('bot ready')
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
