@@ -10,11 +10,7 @@ commands_router = Router()
 
 @commands_router.message(Command('start'))
 async def cmd_start(m: Message):
-    keyboard = [
-        [KeyboardButton(text='Открыть страницу', web_app=WebAppInfo(url='https://eae8-45-67-231-18.ngrok-free.app'))]
-    ]
-    markup = ReplyKeyboardMarkup(keyboard=keyboard)
-    await m.answer(text='Тест', reply_markup=markup)
+    await m.answer(text='Добро пожаловать в наш магазин\n\nПерейдите в приложение, чтобы оформить заказ')
 
 
 @commands_router.message(Command('catalog'))

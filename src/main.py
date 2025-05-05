@@ -3,6 +3,7 @@ import asyncio
 from create_bot import bot, dp
 # from db.models import async_main
 from handlers import routers
+from worker import check_orders
 
 
 async def main():
@@ -11,6 +12,10 @@ async def main():
         dp.include_router(router)
     print('bot ready')
     await bot.delete_webhook(drop_pending_updates=True)
+    await asyncio.gather(
+        check_orders(),
+        dp.start_polling(bot)
+    )
     await dp.start_polling(bot)
 
 
