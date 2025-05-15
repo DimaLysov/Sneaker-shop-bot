@@ -26,4 +26,4 @@ async def check_orders():
                          f'<b>{total_count} рублей</b>')
                 await bot.send_message(chat_id=order['user_tg_id'], text=text)
 
-        await asyncio.sleep(10)
+        await asyncio.sleep(1)
